@@ -3,7 +3,7 @@ CONSOLE_ENABLE = no
 COMMAND_ENABLE = no
 MOUSEKEY_ENABLE = yes
 
-VIA_ENABLE = yes
+VIA_ENABLE = no
 TAP_DANCE_ENABLE = no
 BOOTMAGIC_ENABLE = yes         # Enable Bootmagic Lite
 CAPS_WORD_ENABLE = yes         # Enable built-in Caps Word functionality

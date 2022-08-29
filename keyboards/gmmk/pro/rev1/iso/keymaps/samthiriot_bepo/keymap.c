@@ -156,6 +156,12 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
        case LAYER_ALT:
          rgb_matrix_set_color(LED_TAB,   RGB_WHITE);
          rgb_matrix_set_color(LED_F4,    RGB_WHITE);
+
+         // highlight directional keys
+         rgb_matrix_set_color(LED_UP,    RGB_CYAN);
+         rgb_matrix_set_color(LED_DOWN,  RGB_CYAN);
+         rgb_matrix_set_color(LED_LEFT,  RGB_CYAN);
+         rgb_matrix_set_color(LED_RIGHT, RGB_CYAN);
          break;
        case LAYER_CTRL:
          // highlight ctrl C, ctrl V, ctrl Z...
@@ -169,6 +175,11 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
          rgb_matrix_set_color(LED_W,     RGB_OFFBLUE);
          rgb_matrix_set_color(LED_Y,     RGB_OFFBLUE);
         
+         // highlight directional keys
+         rgb_matrix_set_color(LED_UP,    RGB_CYAN);
+         rgb_matrix_set_color(LED_DOWN,  RGB_CYAN);
+         rgb_matrix_set_color(LED_LEFT,  RGB_CYAN);
+         rgb_matrix_set_color(LED_RIGHT, RGB_CYAN);
          break;
        default:
          break;
