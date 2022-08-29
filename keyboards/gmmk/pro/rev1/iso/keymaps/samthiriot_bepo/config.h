@@ -142,7 +142,8 @@ enum custom_user_layers {
     LAYER_BASE,
     LAYER_FN,
     LAYER_MOUSEKEY,
-    LAYER_ALT
+    LAYER_ALT,
+    LAYER_CTRL
     // more later
     // LATEX
     // JAVA
