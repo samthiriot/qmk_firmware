@@ -23,6 +23,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <math.h>
 
+
+// define layers
+enum custom_user_layers {
+    LAYER_BASE,
+    LAYER_FN,
+    LAYER_MOUSEKEY,
+    LAYER_ALT,
+    LAYER_CTRL
+};
+    // more later
+    // LATEX
+    // JAVA
+    // HTML
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -104,7 +118,7 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     static uint8_t  right_side_leds[8] = {69, 72, 75, 78, 82, 85, 89, 93};
 
     // when caps lock is activated
-    if (host_keyboard_led_state().caps_lock) {
+    if (host_keyboard_led_state().caps_lock || is_caps_word_on()) {
 
         // light the CAPS LOCK touch
         rgb_matrix_set_color(LED_CAPS, RGB_WHITE);

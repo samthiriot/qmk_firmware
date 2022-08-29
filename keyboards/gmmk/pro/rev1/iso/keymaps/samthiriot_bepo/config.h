@@ -136,16 +136,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_WHEEL_BASE_MOVEMENTS 32        // Maximum number of movements at which acceleration stops (default: 32)
 #define MOUSEKEY_WHEEL_ACCELERATED_MOVEMENTS 48 // Accelerated wheel movements (default: 48)
 #define MOUSEKEY_WHEEL_DECELERATED_MOVEMENTS 8  // Decelerated wheel movements (default: 8)
-
-// define layers
-enum custom_user_layers {
-    LAYER_BASE,
-    LAYER_FN,
-    LAYER_MOUSEKEY,
-    LAYER_ALT,
-    LAYER_CTRL
-    // more later
-    // LATEX
-    // JAVA
-    // HTML
-};
