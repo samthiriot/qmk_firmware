@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "gourdo1.h"
 
 #include <math.h>
+#include <sendstring_bepo.h>
 
 
 // define layers
@@ -42,7 +43,8 @@ enum custom_user_layers {
 
 enum custom_keycodes {
     COMMENT_LINE = SAFE_RANGE,
-    COMMENT_BLOCK
+    COMMENT_BLOCK,
+    KC_MYMAIL
 };
 
 bool is_insert_active = false;
@@ -95,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [LAYER_FN] = LAYOUT(
         _______, KC_MUTE, KC_VOLD, KC_VOLU, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_PSCR,          _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, QK_BOOT,          _______,
+        _______, _______, _______, _______, _______, _______, KC_MYMAIL, _______, _______, _______, _______, _______, _______, QK_BOOT,          _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                   _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          KC_BTN1, KC_MS_U, KC_BTN2,
@@ -140,6 +142,18 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+
+    // not working yet...        
+    if (record->event.pressed) {
+        switch (keycode) {
+        case KC_MYMAIL:
+            SEND_STRING("@res-ear.ch");
+            break;
+        case COMMENT_BLOCK:
+            SEND_STRING("/**\\");
+            break;
+        }
+    }
 
     // deal with base layer features
     if (record->event.pressed && get_highest_layer(layer_state) == LAYER_BASE) {
@@ -192,17 +206,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
     }
 
-    // not working yet...
-    switch (keycode) {
-    case COMMENT_BLOCK:
-        if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
-            SEND_STRING("/**\\");
-        } else {
-            // when keycode QMKBEST is released
-        }
-        break;
-    }
     return true;
 };
 
@@ -262,6 +265,8 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
          rgb_matrix_set_color(LED_RSFT,  RGB_SPRINGGREEN);
          rgb_matrix_set_color(LED_END,   RGB_SPRINGGREEN);
          rgb_matrix_set_color(KC_BTN3,   RGB_SPRINGGREEN);
+         // my macros
+         rgb_matrix_set_color(LED_6,     RGB_YELLOW);
          break;
        case LAYER_ALT:
          rgb_matrix_set_color(LED_TAB,   RGB_WHITE);
