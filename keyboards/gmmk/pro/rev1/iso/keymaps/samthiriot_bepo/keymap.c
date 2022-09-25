@@ -254,8 +254,9 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
        case LAYER_BASE:  //layer one
          break;
        case LAYER_FN:
+         rgb_matrix_set_color(LED_FN,    RGB_YELLOW);
          // highlight flashing 
-         rgb_matrix_set_color(LED_BSPC,  RGB_ORANGE);
+         rgb_matrix_set_color(LED_BSPC,  RGB_YELLOW);
          // highlight directional keys
          rgb_matrix_set_color(LED_UP,    RGB_WHITE);
          rgb_matrix_set_color(LED_DOWN,  RGB_WHITE);
@@ -264,9 +265,22 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
          // highlight mouse keys
          rgb_matrix_set_color(LED_RSFT,  RGB_SPRINGGREEN);
          rgb_matrix_set_color(LED_END,   RGB_SPRINGGREEN);
-         rgb_matrix_set_color(KC_BTN3,   RGB_SPRINGGREEN);
+         rgb_matrix_set_color(LED_RCTL,  RGB_SPRINGGREEN);
          // my macros
          rgb_matrix_set_color(LED_6,     RGB_YELLOW);
+
+         rgb_matrix_set_color(LED_F1,     RGB_YELLOW);
+         rgb_matrix_set_color(LED_F2,     RGB_YELLOW);
+         rgb_matrix_set_color(LED_F3,     RGB_YELLOW);
+         rgb_matrix_set_color(LED_F4,     RGB_YELLOW);
+         rgb_matrix_set_color(LED_F6,     RGB_YELLOW);
+         rgb_matrix_set_color(LED_F7,     RGB_YELLOW);
+         rgb_matrix_set_color(LED_F8,     RGB_YELLOW);
+         rgb_matrix_set_color(LED_F9,     RGB_YELLOW);
+         rgb_matrix_set_color(LED_F10,    RGB_YELLOW);
+         rgb_matrix_set_color(LED_F11,    RGB_YELLOW);
+         rgb_matrix_set_color(LED_F12,    RGB_YELLOW);
+         rgb_matrix_set_color(LED_PRT,    RGB_YELLOW);
          break;
        case LAYER_ALT:
          rgb_matrix_set_color(LED_TAB,   RGB_WHITE);
