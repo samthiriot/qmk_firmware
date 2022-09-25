@@ -178,6 +178,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
+        // click firwware TODO not working
+        case KC_BSPC:
+            rgb_matrix_set_color(LED_BSPC,  RGB_RED);
+            rgb_matrix_set_color(LED_DEL,   RGB_RED);  
+
+            rgb_matrix_set_color(LED_F,   RGB_RED);  
+            rgb_matrix_set_color(LED_L,   RGB_RED);  
+            rgb_matrix_set_color(LED_A,   RGB_RED);  
+            rgb_matrix_set_color(LED_S,   RGB_RED);  
+            rgb_matrix_set_color(LED_H,   RGB_RED);  
+            break;
         }
     }
 
@@ -267,13 +278,14 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
          rgb_matrix_set_color(LED_Z,     RGB_WHITE);
          rgb_matrix_set_color(LED_X,     RGB_WHITE);
          rgb_matrix_set_color(LED_C,     RGB_WHITE);
-         rgb_matrix_set_color(LED_Q,     RGB_WHITE);
+         rgb_matrix_set_color(LED_V,     RGB_WHITE);
 
          rgb_matrix_set_color(LED_S,     RGB_WHITE);
+         rgb_matrix_set_color(LED_F,     RGB_WHITE);
 
-         rgb_matrix_set_color(LED_W,     RGB_WHITE);
          rgb_matrix_set_color(LED_Y,     RGB_WHITE);
-        
+         rgb_matrix_set_color(LED_A,     RGB_WHITE);
+
          // highlight directional keys
          rgb_matrix_set_color(LED_UP,    RGB_SPRINGGREEN);
          rgb_matrix_set_color(LED_DOWN,  RGB_SPRINGGREEN);
