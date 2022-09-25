@@ -306,10 +306,10 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
          rgb_matrix_set_color(LED_A,     RGB_WHITE);
 
          // highlight directional keys
-         rgb_matrix_set_color(LED_UP,    RGB_SPRINGGREEN);
-         rgb_matrix_set_color(LED_DOWN,  RGB_SPRINGGREEN);
-         rgb_matrix_set_color(LED_LEFT,  RGB_SPRINGGREEN);
-         rgb_matrix_set_color(LED_RIGHT, RGB_SPRINGGREEN);
+         rgb_matrix_set_color(LED_UP,    RGB_WHITE);
+         rgb_matrix_set_color(LED_DOWN,  RGB_WHITE);
+         rgb_matrix_set_color(LED_LEFT,  RGB_WHITE);
+         rgb_matrix_set_color(LED_RIGHT, RGB_WHITE);
          break;
        //case LAYER_LINUX:
        //  rgb_matrix_set_color(LED_BSPC,  RGB_YELLOW);
