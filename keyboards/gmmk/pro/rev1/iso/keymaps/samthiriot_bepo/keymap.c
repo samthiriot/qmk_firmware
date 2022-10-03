@@ -44,7 +44,8 @@ enum custom_user_layers {
 enum custom_keycodes {
     COMMENT_LINE = SAFE_RANGE,
     COMMENT_BLOCK,
-    KC_MYMAIL
+    KC_MYMAIL,
+    KC_TODO
 };
 
 bool is_insert_active = false;
@@ -99,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_MUTE, KC_VOLD, KC_VOLU, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_PSCR,          _______,
         _______, _______, _______, _______, _______, _______, KC_MYMAIL, _______, _______, _______, _______, _______, _______, QK_BOOT,          _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                   _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
+        _______, _______, _______, _______, _______, _______, _______, KC_TODO, _______, _______, _______, _______, _______, _______,          _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          KC_BTN1, KC_MS_U, KC_BTN2,
         _______, _______, _______,                            _______,                            _______, _______, KC_BTN3, KC_MS_L, KC_MS_D, KC_MS_R
     ),
@@ -148,6 +149,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         switch (keycode) {
         case KC_MYMAIL:
             SEND_STRING("@res-ear.ch");
+            break;
+        case KC_TODO: 
+            SEND_STRING("TODO");
             break;
         case COMMENT_BLOCK:
             SEND_STRING("/**\\");
@@ -267,7 +271,8 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
          rgb_matrix_set_color(LED_END,   RGB_SPRINGGREEN);
          rgb_matrix_set_color(LED_RCTL,  RGB_SPRINGGREEN);
          // my macros
-         rgb_matrix_set_color(LED_6,     RGB_YELLOW);
+         rgb_matrix_set_color(LED_6,     RGB_YELLOW); // email
+         rgb_matrix_set_color(LED_T,     RGB_YELLOW); // for TODO
 
          rgb_matrix_set_color(LED_F1,     RGB_YELLOW);
          rgb_matrix_set_color(LED_F2,     RGB_YELLOW);
